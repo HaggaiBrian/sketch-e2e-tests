@@ -1,0 +1,74 @@
+Test Case 2
+Scenario 2. Validate a user is not able to sign-in with email and password fields blank
+
+Verify that there is a sign in screen
+- Expected Result: sign in screen should be displayed and visible
+
+Verify that the user leaves the email input field blank
+- Expected Result: Input field with placeholder reading “Enter your email”, remains blank
+
+Verify that the user leaves the password input field blank.
+- Expected Result: Input field with placeholder with “••••••••”, remains blank
+
+Verify that the user cannot sign in after clicking the sign in button.
+- Expected Result: “Email can’t be blank” and “Password can’t be blank” error should be shown
+
+Test Case 3
+Scenario 3. Validate a user is not able to sign-in with correct email typed but password field is blank
+
+Verify that there is a sign in screen
+- Expected Result: sign in screen should be displayed and visible
+
+Verify that user can type their email address
+- Expected Result: Input field with placeholder reading “Enter your email” and correct email is typed
+
+Verify that the user leaves the password input field blank.
+- Expected Result: Input field with placeholder with “••••••••”, remains blank
+
+Verify that the user cannot sign in after clicking the sign in button.
+- Expected Result: “Password can’t be blank” error should be shown
+
+Test Case 4
+Scenario 4. Validate a user is not able to sign-in with blank email field but correct password is typed
+
+Verify that there is a sign in screen
+- Expected Result: sign in screen should be displayed and visible
+
+Verify that the user leaves the email input field blank
+- Expected Result: Input field with placeholder reading “Enter your email”, remains blank
+
+Verify that the user can type their password.
+- Expected Result: Input field with placeholder with “••••••••” and correct password is typed with hidden characters
+
+Verify that the user cannot sign in after clicking the sign in button.
+- Expected Result: “Email can’t be blank” error should be shown
+
+Test Case 5
+Scenario 5. Validate a user is not able to sign-in with email and password incorrect
+
+Verify that there is a sign in screen
+- Expected Result: sign in screen should be displayed and visible
+
+Verify that user types an incorrect email address
+- Expected Result: Input field with placeholder reading “Enter your email” and incorrect email is typed
+
+Verify that the user types an incorrect password.
+- Expected Result: Input field with placeholder with “••••••••” and incorrect password is typed with hidden characters
+
+Verify that the user cannot sign in after clicking the sign in button.
+- Expected Result: “We couldn’t sign you in. Please check your details and try again.” error should be shown
+
+Test Case 6
+Scenario 6. Validate a user is not able to sign-in with in correct email format but correct password
+
+Verify that there is a sign in screen
+- Expected Result: sign in screen should be displayed and visible
+
+Verify that user can type an incorrect email format
+- Expected Result: Input field with placeholder reading “Enter your email” and the incorrect email format is typed
+
+Verify that the user can type their password.
+- Expected Result: Input field with placeholder with “••••••••” and correct password is typed with hidden characters
+
+Verify that the user cannot sign in after clicking the sign in button.
+- Expected Result: “This is not a valid email” error should be shown
