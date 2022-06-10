@@ -1,0 +1,6 @@
+;FFMETADATA1
+[CHAPTER]
+TIMEBASE=1/1000
+START=-12990
+END=20718
+title=Positive test case scenarios should be able to sign-in with correct email and password

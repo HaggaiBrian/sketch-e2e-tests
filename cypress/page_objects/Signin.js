@@ -13,7 +13,7 @@ export class Signin {
         .should('eq', "Sketch - Sign in - It's great to see you again")
     }
 
-    login (email, password) 
+    loginFilled (email, password) 
     {
         cy
         .get('#text-input')
@@ -24,18 +24,47 @@ export class Signin {
         .clear()
         .type(password)
         cy
-        .get('.sc-fGoNRK > .sc-ehCIER').click()
+        .get('.sc-fGoNRK > .sc-ehCIER')
+        .click()
+        .get('.sc-ihhdAm > :nth-child(1) > .sc-ehCIER', {timeout: 30000})
+        .click()
         return this
+    }
+
+    loginBlank () 
+    {
+        cy
+        .get('.sc-fGoNRK > .sc-ehCIER')
+        .click()
+        .get(':nth-child(1) > .sc-hxaKgE > li > .sc-dYPeNj')
+        .should('be.visible')
+        .get(':nth-child(2) > .sc-hxaKgE > li > .sc-dYPeNj')
+        .should('be.visible')
     }
 
     validateSuccessfulSignin () 
     {
         cy
-        .url()
-        .should('include', 'workspace')
-        .should('include', 'shares')
         .get('.sc-bGaWHc', { timeout: 30000 })
+        .url()
+        .should('include', 'shares')
         .title()
         .should('eq', 'Sketch - Documents')
+    }
+
+
+    signout()
+    {
+        cy
+        .get('.sc-bGaWHc')
+        .click()
+        .get('.sc-gUQueJ')
+        .click()
+        .get('#text-input', { timeout: 30000 })
+        .url()
+        .should('include','signin')
+        .should('eq', 'https://www.sketch.com/signin')
+        .title()
+        .should('eq', "Sketch - Sign in - It's great to see you again")
     }
 }
