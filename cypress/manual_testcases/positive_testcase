@@ -12,3 +12,15 @@ Verify that the user can type their password.
 
 Verify that the user can sign in after clicking the sign in button.
 - Expected Result: User should be redirected to the workspace page
+
+Test Case7
+Scenario 7. Validate if a user can sign out
+
+Verify that there is a signed in user avatar
+- Expected Result: user avatar with full name of signed in user should be displayed and visible
+
+Verify that clicking the signed user avatar displays the pop over content
+- Expected Result: Popover content is shown and displayed with sign out button
+
+Verify that clicking the sign out button signs user out	.
+- Expected Result: User should be successfully signed out and the sign in page is displayed
