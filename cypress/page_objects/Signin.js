@@ -13,7 +13,7 @@ export class Signin {
         .should('eq', "Sketch - Sign in - It's great to see you again")
     }
 
-    loginFilled (email, password) 
+    loginCorrectFilled (email, password) 
     {
         cy
         .get('#text-input')
@@ -28,6 +28,66 @@ export class Signin {
         .click()
         .get('.sc-ihhdAm > :nth-child(1) > .sc-ehCIER', {timeout: 30000})
         .click()
+        return this
+    }
+
+    loginInCorrectFilled (email, password) 
+    {
+        cy
+        .get('#text-input')
+        .clear()
+        .type(email)
+        cy
+        .get('[data-testid="input"]')
+        .clear()
+        .type(password)
+        cy
+        .get('.sc-fGoNRK > .sc-ehCIER')
+        .click()
+        .get('.sc-dYPeNj')
+        .should('be.visible')
+        return this
+    }
+
+    loginCorrectEmailBlankPassword (email) 
+    {
+        cy
+        .get('#text-input')
+        .clear()
+        .type(email)
+        cy
+        .get('.sc-fGoNRK > .sc-ehCIER')
+        .click()
+        .get(':nth-child(2) > .sc-hxaKgE > li > .sc-dYPeNj')
+        .should('be.visible')
+        return this
+    }
+
+    loginCorrectEmailFormat (email) 
+    {
+        cy
+        .get('#text-input')
+        .clear()
+        .type(email)
+        cy
+        .get('.sc-fGoNRK > .sc-ehCIER')
+        .click()
+        .get('.sc-dYPeNj')
+        .should('be.visible')
+        return this
+    }
+
+    loginBlankEmailCorrectPassword (password) 
+    {
+        cy
+        .get('[data-testid="input"]')
+        .clear()
+        .type(password)
+        cy
+        .get('.sc-fGoNRK > .sc-ehCIER')
+        .click()
+        .get(':nth-child(1) > .sc-hxaKgE > li > .sc-dYPeNj')
+        .should('be.visible')
         return this
     }
 
