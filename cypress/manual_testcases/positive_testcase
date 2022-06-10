@@ -1,0 +1,14 @@
+Test Case 1
+Scenario 1. Validate if a user can sign-in with correct email and password
+
+Verify that there is a sign in screen
+- Expected Result: sign in screen should be displayed and visible
+
+Verify that user can type their email address
+- Expected Result: Input field with placeholder reading “Enter your email” and correct email is typed
+
+Verify that the user can type their password.
+- Expected Result: Input field with placeholder with “••••••••” and correct password is typed with hidden characters
+
+Verify that the user can sign in after clicking the sign in button.
+- Expected Result: User should be redirected to the workspace page

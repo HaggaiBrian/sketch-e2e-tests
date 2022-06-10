@@ -1,0 +1,10 @@
+/*
+I shall use this jsconfig.json file to create a intellisense autocompletion for the entire project in one place,
+instead of having /// <reference types="cypress" /> command added in each and every single test spec file. This
+promotes easy code maintainance, reusability of code and prevents unnecessary code duplication. 
+NB. This file is specific and only understood by VS code. Other IDE's like intellij, webstorm, may not understand it.
+*/
+
+{
+    "include": ["./node_modules/cypress", "cypress/**/*.js"]
+}
