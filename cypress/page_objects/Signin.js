@@ -13,22 +13,21 @@ export class Signin {
         .should('eq', "Sketch - Sign in - It's great to see you again")
     }
 
-    loginCorrectFilled (email, password) 
+    loginCorrectFilled () 
     {
         cy
         .get('#text-input')
         .clear()
-        .type(email)
+        .type(Cypress.env('email'))
         cy
         .get('[data-testid="input"]')
         .clear()
-        .type(password)
+        .type(Cypress.env('password'))
         cy
         .get('.sc-fGoNRK > .sc-ehCIER')
         .click()
         .get('.sc-ihhdAm > :nth-child(1) > .sc-ehCIER', {timeout: 30000})
         .click()
-        return this
     }
 
     loginInCorrectFilled (email, password) 
@@ -49,18 +48,17 @@ export class Signin {
         return this
     }
 
-    loginCorrectEmailBlankPassword (email) 
+    loginCorrectEmailBlankPassword () 
     {
         cy
         .get('#text-input')
         .clear()
-        .type(email)
+        .type(Cypress.env('email'))
         cy
         .get('.sc-fGoNRK > .sc-ehCIER')
         .click()
         .get(':nth-child(2) > .sc-hxaKgE > li > .sc-dYPeNj')
         .should('be.visible')
-        return this
     }
 
     loginCorrectEmailFormat (email) 
@@ -77,18 +75,17 @@ export class Signin {
         return this
     }
 
-    loginBlankEmailCorrectPassword (password) 
+    loginBlankEmailCorrectPassword () 
     {
         cy
         .get('[data-testid="input"]')
         .clear()
-        .type(password)
+        .type(Cypress.env('password'))
         cy
         .get('.sc-fGoNRK > .sc-ehCIER')
         .click()
         .get(':nth-child(1) > .sc-hxaKgE > li > .sc-dYPeNj')
-        .should('be.visible')
-        return this
+        .should('be.visible') 
     }
 
     loginBlank () 
